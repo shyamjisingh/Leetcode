@@ -8,7 +8,7 @@ public:
 
             if(prices[i]<buy){
                 buy=prices[i];
-            }else{
+            }if(prices[i]>prices[i-1]){
                int currentprofit=prices[i]-buy;
                 profit=profit+currentprofit;
                 buy=prices[i];

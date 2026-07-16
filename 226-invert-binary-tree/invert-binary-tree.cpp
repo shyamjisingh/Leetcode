@@ -17,9 +17,7 @@ public:
                 return ;
             }
 
-            TreeNode *temp=root->left;
-            root->left=root->right;
-            root->right=temp;
+            swap(root->left,root->right);
            find(root->left);
               find(root->right);
             

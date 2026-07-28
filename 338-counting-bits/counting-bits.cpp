@@ -1,26 +1,20 @@
 class Solution {
 public:
     vector<int> countBits(int n) {
-        vector<int>ans(n+1,0);
+        vector<int>ans;
          int count =0;
          for(int i=0;i<=n;i++){
-             ans[i]=hammingWeight(i);
-        }
-        
-        return ans;
-    }
-    int hammingWeight(int n) {
-
-       // int n1=1;
-        int count =0;
-        while(n>=1){
-            if(n&1){
+            count=0;
+            int val=i;
+        while(val>0){
+            if(val&1){
                  count++;
             }
            
-            n=n>>1;
+            val=val>>1;
         }
-        return count;
-        
+        ans.push_back(count);
+        }
+        return ans;
     }
 };

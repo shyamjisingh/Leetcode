@@ -15,7 +15,7 @@ public:
     bool isValid = true;
 
     void inorder(TreeNode* root) {
-        if (!isValid || !root) return;
+        if (!root) return;
 
         if (root->left) inorder(root->left);
 

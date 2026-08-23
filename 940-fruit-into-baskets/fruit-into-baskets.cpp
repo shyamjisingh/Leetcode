@@ -1,7 +1,7 @@
 class Solution {
 public:
     int totalFruit(vector<int>& fruits) {
-        vector<int> count(100005, 0); 
+        vector<int> count(fruits.size(), 0); 
         int left = 0;
         int maxfruits = 0;
         int uniquetypes = 0; 

@@ -6,13 +6,17 @@ public:
       string result = ""; 
       int i = 0, j = 0;
 
-      while (i < m || j < n ) {
-        if (i < m) {
+      while (i < m ) {
+       
             result.push_back(word1[i++]);
-        }
+        
         if (j < n) {
-            result.push_back(word2[j++]);
+            result.push_back(word2[j]);
+            j++;
         }
+      }
+      if(j<n){
+        result.append(word2,j,n);
       }
 
       return result;

@@ -1,24 +1,25 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        if (numRows == 1) return s; // no zigzag needed, just return as-is
+        if (numRows == 1) return s; 
 
-        vector<string> rows(numRows); // one bucket per row
+        vector<string> rows(numRows);
         int currentRow = 0;
         bool goingDown = false;
 
         for (char c : s) {
-            rows[currentRow] += c; // drop the letter into its row's bucket
-
-            // flip direction when we hit the top or bottom row
+            rows[currentRow] += c; 
             if (currentRow == 0 || currentRow == numRows - 1) {
                 goingDown = !goingDown;
             }
 
-            currentRow += goingDown ? 1 : -1; // bounce up or down
+            
+            if(goingDown){
+                currentRow+=1;
+            }else{
+                currentRow-=1;
+            }
         }
-
-        // glue all the row buckets together in order
         string result;
         for (const string& row : rows) {
             result += row;

@@ -1,4 +1,4 @@
-# Write your MySQL query statement below
+-- # Write your MySQL query statement below
 select DISTINCT l1.num as ConsecutiveNums
 from Logs l1
 join Logs l2
